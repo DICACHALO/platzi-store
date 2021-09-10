@@ -1,4 +1,15 @@
-<h3>{{ product.title }}</h3>
-<img [src]="product.image" alt="">
-<strong>{{ product.price }}</strong>
-<button (click)="addCart()">Agregar al carrito</button>
+<div class="main-card">
+  <div class="tittle-card">
+    <h3>{{ product.title }}</h3>
+  </div>
+  <div class="card-content">
+    <img [src]="product.image" alt="Imagen del producto" class="card-image" />
+    <h5 class="card-price">{{ product.price }}</h5>
+    {{ product.description}}
+  </div>
+  <div class="card-footer">
+    <button class="button-product" (click)="addCart()">
+      Agregar al carrito
+    </button>
+  </div>
+</div>

@@ -12,14 +12,14 @@ import {
 import { Product } from "../product.model";
 
 @Component({
-  selector: 'app-product',
-  templateUrl: './product.component.html',
-  styleUrls: ['./product.component.scss']
+  selector: "app-product",
+  templateUrl: "./product.component.html",
+  styleUrls: ["./product.component.scss"],
 })
 export class ProductComponent implements OnChanges, OnInit, DoCheck, OnDestroy {
   @Input() product: Product;
   @Output() productClicked: EventEmitter<any> = new EventEmitter();
-  //Cuando hacemos new EventEmitter() entre los paréntesis del constructor NO va un valor por defecto, va un boolean que indica si el evento es asincrono (true) o sincrono (false), la defecto es “false”.
+  // Cuando hacemos new EventEmitter() entre los paréntesis del constructor NO va un valor por defecto, va un boolean que indica si el evento es asincrono (true) o sincrono (false), la defecto es “false”.
 
   constructor() {
     console.log("1. Constructor");
