@@ -21,6 +21,8 @@ export class ProductComponent implements OnChanges, OnInit, DoCheck, OnDestroy {
   @Output() productClicked: EventEmitter<any> = new EventEmitter();
   // Cuando hacemos new EventEmitter() entre los paréntesis del constructor NO va un valor por defecto, va un boolean que indica si el evento es asincrono (true) o sincrono (false), la defecto es “false”.
 
+  today = new Date();
+
   constructor() {
     console.log("1. Constructor");
   }

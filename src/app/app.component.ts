@@ -7,6 +7,8 @@ import { Product } from "./product.model";
 })
 export class AppComponent {
   title = 'platzi-store';
+
+  power = 10;
   
   products: Product[] = [
     {
@@ -14,7 +16,7 @@ export class AppComponent {
       image: 'assets/images/camiseta.png',
       title: 'Camiseta',
       price: 80000,
-      description: 'bla bla bla bla bla'
+      description: 'Es una camiseta unisex que se adapta a todo tipo de tamaños'
     },
     {
       id: '2',
