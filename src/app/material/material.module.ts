@@ -6,6 +6,8 @@ import { MatToolbarModule } from "@angular/material/toolbar";
 import { MatBadgeModule } from "@angular/material/badge";
 import { MatIconModule } from "@angular/material/icon";
 import { MatCardModule } from "@angular/material/card";
+import { MatSelectModule } from '@angular/material/select';
+import { MatRadioModule } from '@angular/material/radio';
 
 @NgModule({
   declarations: [],
@@ -16,6 +18,8 @@ import { MatCardModule } from "@angular/material/card";
     MatBadgeModule,
     MatIconModule,
     MatCardModule,
+    MatSelectModule,
+    MatRadioModule,
   ],
   exports: [
     MatButtonModule,
@@ -23,6 +27,8 @@ import { MatCardModule } from "@angular/material/card";
     MatBadgeModule,
     MatIconModule,
     MatCardModule,
+    MatSelectModule,
+    MatRadioModule,
   ],
 })
 export class MaterialModule {}
