@@ -1,51 +1,46 @@
-import { NgModule } from "@angular/core";
-import { Routes, RouterModule, PreloadAllModules
- } from "@angular/router";
+import { NgModule } from '@angular/core';
+import { Routes, RouterModule, PreloadAllModules } from '@angular/router';
 
-import { ContactComponent } from "./contact/contact.component";
-import { LayoutComponent } from "./layout/layout.component";
-import { PageNotFoundComponent } from "./page-not-found/page-not-found.component";
-import { ProductDetailComponent } from "./product-detail/product-detail.component";
-import { ProductsComponent } from "./products/products.component";
+import { LayoutComponent } from './layout/layout.component';
+
+import { AdminGuard } from './admin.guard';
 
 const routes: Routes = [
   {
-    path: "",
+    path: '',
     component: LayoutComponent,
     children: [
       {
-        path: "",
-        redirectTo: "/home",
-        pathMatch: "full",
+        path: '',
+        redirectTo: '/home',
+        pathMatch: 'full',
       },
       {
-        path: "home",
+        path: 'home',
         loadChildren: () => import('./home/home.module').then(m => m.HomeModule)
       },
       {
-        path: "products",
-        component: ProductsComponent,
+        path: 'products',
+        
+        loadChildren: () => import('./product/product.module').then(m => m.ProductModule)
       },
       {
-        path: "products/:id",
-        component: ProductDetailComponent,
+        path: 'contact',
+        
+        loadChildren: () => import('./contact/contact.module').then(m => m.ContactModule)
       },
-      {
-        path: "contact",
-        component: ContactComponent,
-      },
-    ],
+    ]
   },
   {
-    path: "**",
-    component: PageNotFoundComponent,
-  },
+    path: '**',
+    loadChildren: () => import('./page-not-found/page-not-found.module').then(m => m.PageNotFoundModule)
+  }
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes, {
     preloadingStrategy: PreloadAllModules
   })],
-  exports: [RouterModule],
+  exports: [RouterModule]
 })
-export class AppRoutingModule {}
+export class AppRoutingModule { }
