@@ -8,9 +8,9 @@
     {{ product.description | slice: 0:60 }}
   </div>
   <div class="card-footer">
-    <button class="button-product" (click)="addCart()">
+    <button class="button-product" (click)="addCart()" mat-raised-button color="primary">
       Agregar al carrito
     </button>
-    <a [routerLink]="['/products', product.id]" >Ver detalles</a>
+    <a [routerLink]="['/products', product.id]" mat-raised-button color="accent">Ver detalles</a>
   </div>
 </div>
