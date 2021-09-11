@@ -7,6 +7,11 @@ import { ProductsComponent } from "./products/products.component";
 
 const routes: Routes = [
   {
+    path: '',
+    redirectTo: '/home',
+    pathMatch: 'full'
+  },
+  {
     path: "home",
     component: HomeComponent
   },
